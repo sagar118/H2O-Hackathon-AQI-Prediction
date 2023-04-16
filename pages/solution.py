@@ -73,7 +73,7 @@ In depth EDA can be found in our `EDA notebook`.
 ## Preprocessing
 <hr/>
 
-**We dealt with the missing values by imputing them with the mean of the following two values.** We also checked for seasonality and stationarity of the data. We found that the data was not stationary and hence we applied differencing (1 level) to make it stationary. We also checked for autocorrelation and partial autocorrelation of the data. In some cases we also tried using Holt Smoothing.
+**We dealt with the missing values by imputing them with the mean of the following two values.** We also checked for seasonality and stationarity of the data. We found that the data was not stationary and hence we applied differencing (1 level) to make it stationary. We also checked for autocorrelation and partial autocorrelation of the data.
 
 Some checks we performed on the data while using the `VAR` (Vector Auto Regression) model:
 
@@ -128,7 +128,7 @@ Why does ARIMA(7, 1, 2) work the best?
     *   In simpler terms, ARIMA(7,1,2) tries to capture the patterns and trends in the time series data by looking at the values from 7 time periods ago and combining them in different ways with the current value. 
     *   It also takes into account the difference between consecutive values to account for any trends in the data. (Make it stationary).
     *   Finally, it looks at the moving average of the values to smooth out any noise or fluctuations in the data. 
-*   Meaning recent values are more important than the older values which makes sense cause `AQI` doesn't follow any climatic pattern and is more dependent on the current pollution levels.
+*   **Meaning recent values are more important than the older values which makes sense cause `AQI` doesn't follow any climatic pattern and is more dependent on the current pollution levels.**
 
 
 ## Model Results
