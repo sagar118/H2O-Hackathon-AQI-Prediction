@@ -1,12 +1,12 @@
 from h2o_wave import app, main, Q
 from components.navbar import nav
 from components.footer import foot
-from components.layout_responsive import meta_layout
+from components import layout_responsive
 from pages import db, appendix, home, solution
 
 @app('/site')
 async def server(q: Q):
-    q.page['meta'] = await q.run(meta_layout, q)
+    q.page['meta'] = await q.run(layout_responsive.meta_layout, q)
     q.page['header'] = await q.run(nav)
     q.page['footer'] = await q.run(foot)
     
@@ -60,14 +60,14 @@ async def server(q: Q):
             q.client.state = q.args.state
             q.client.station = []
         
-        if q.args.station:
-            q.client.station = q.args.station.copy()
+        if q.args.station or q.args.station == []:
+            q.client.station = q.args.station
 
         q.page['sidebar1'] = await q.run(db.state_bar_menu, q)
         q.page['sidebar2'] = await q.run(db.station_bar_menu, q)
 
-        if q.client.station:
-            q.page['body'] = await q.run(db.plot_aqi, q)
+        # if q.client.station or q.args.station == []:
+        q.page['body'] = await q.run(db.plot_aqi, q)
 
     elif hash == "solution":
         q.page['solution'] = solution.sol_md

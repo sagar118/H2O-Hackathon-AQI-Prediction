@@ -1,6 +1,7 @@
 from h2o_wave import ui
 
 def meta_layout(q):
+    # layout = ui.meta_card(box='', layouts=[])
     if (q.args['#'] == 'home') or (q.args['#'] == None):
         layout = ui.meta_card(box='', layouts=[
             ui.layout(
