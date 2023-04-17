@@ -54,10 +54,11 @@ We find:
 
 {df.isnull().sum().sort_values(ascending=False).to_markdown()}
 
-*   There are some missing values present in the dataset. On further analysis (not shown here), we find that:
-*   Particularly the majority of the missing values are for `Delhi` on 2nd & 3rd of August 2020.
-*   Another instance of missing values is in `Karnataka` on 4th and 5th of January 2021.
-*  The missing values are not random but are absent in the start of the data collection period. Hence, we planned to either impute the missing values or drop the rows with missing values.
+*   There are some missing values present in the dataset.
+*   On further analysis (not shown here), we find that:
+    *   Particularly the majority of the missing values are for `Delhi` on 2nd & 3rd of August 2020.
+    *   Another instance of missing values is in `Karnataka` on 4th and 5th of January 2021.
+    *   The missing values are not random but are absent in the start of the data collection period. Hence, we planned to either impute the missing values or drop the rows with missing values.
 
 ### <u>Historical Data Range</u> 
 
@@ -68,7 +69,8 @@ We find:
 *   We observe that the start dates for each state varies.
 *   `Delhi` has data for more than a year when compared to other states. This also indicates why we have more data for some states.
 
-In depth EDA can be found in our `EDA notebook`.
+
+In depth EDA can be found in our <a href="https://github.com/sagar118/H2O-Hackathon-AQI-Prediction/blob/main/notebooks/EDA.ipynb" target="_blank">`EDA notebook`</a>.
 
 ## Preprocessing
 <hr/>
@@ -97,7 +99,7 @@ Some checks we performed after creating the `VAR` model:
 ## Feature Engineering
 <hr/>
 
-We also tried to transform our target variable `AQI` using the BoxCox and Log transformations. Both of these transformations gave better results than the original data. **Among the two, the BoxCox transformation gave better results on the evaluation metric.**
+We also tried to transform our target variable `AQI` using the BoxCox, Log, and Standard Scaler transformations. Both of these transformations gave better results than the original data. **Among the two, the Standard Scaler + BoxCox transformation gave better results on the evaluation metric.**
 
 ## Model Building
 <hr/>
@@ -114,7 +116,7 @@ Our take on the data distribution and model predictions is as follows:
 *   There were a few huge spikes in the data for `AQI` in 'Assam', 'Karnataka', and 'Tamil Nadu'.
 *   There were also many data points were `AQI` had a plateaued value which we are not sure about. Either the data was not collected or the data was not recorded and hence the previous value was repeated.
 
-Although we tried to tune the model for each time-series, we found that **ARIMA(7, 1, 2) with BoxCox Transformation worked the best across all the states-station pairs**.
+Although we tried to tune the model for each time-series, we found that **ARIMA(7, 1, 2) with Standard Scaler + BoxCox Transformation worked the best across all the states-station pairs**.
 
 ## Model Explanability
 <hr/>
@@ -146,7 +148,8 @@ Below are the results of the models on the test (submission) data.
 | ARIMA (auto-arima) | Log | 29.4992 |
 | ARIMA (7,1,2) | - | 28.942 |
 | ARIMA (7,1,2) | Log | 28.0175 |
-| **ARIMA (7,1,2)** | **BoxCox** | **28.0001** |
+| **ARIMA (7,1,2)** | **Standard Scaler + BoxCox** | **27.9306** |
+| ARIMA (7,1,2) | BoxCox | 28.0001 |
 | ARIMA (7,1,2) | Differencing only if not stationary | 30.09 |
 
 
