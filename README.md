@@ -1,6 +1,6 @@
 # H2O-Hackathon-AQI-Prediction
 
-Welcome to the repository for the “Predicting the Air Quality Index of Indian Cities using Machine Learning” competition, where the goal is to forecast the Air Quality Index (AQI) for major Indian AQI stations for the upcoming 28 days using machine learning techniques.
+Welcome to the repository for the “Predicting the Air Quality Index of Indian Cities using Machine Learning” competition, where the goal is to forecast the Air Quality Index (AQI) for major Indian AQI stations for the upcoming 28 days using machine learning techniques. This solution secured the second place in the H2O World India Hackathon held in April 2023.
 
 Air quality monitoring is crucial for our well-being, and this competition utilizes historical daily averages of various air pollutants to build accurate models that can predict the AQI for each station. Our team has extensively analyzed the data and constructed models that we believe will help us achieve our objective.
 
