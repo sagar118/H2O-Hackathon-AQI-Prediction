@@ -10,7 +10,9 @@ To navigate the repo:
 - Rest of the notebook contains code for H2O-wave app we built and deployed it on Heroku.
   - `app.py` is the main script to run the wave-app.
   - `components`, `pages`, and `utils` directory contain scripts in a modular fashion to support different tabs/sections in the app.
-  
+ 
+Link to our Dashboard: <a href="https://h2o-pipeline-aqi.herokuapp.com/site" target="_blank">Link</a>. You can find more details on our approach on the `solution` tab in our dashboard.
+
 ## Team Members:
 
 1. Sagar Thacker ([LinkedIn](https://www.linkedin.com/in/sagar-thacker/) | [GitHub](https://www.github.com/sagar118))
