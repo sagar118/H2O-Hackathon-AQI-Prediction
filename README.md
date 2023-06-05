@@ -19,3 +19,6 @@ Link to our Dashboard: <a href="https://h2o-pipeline-aqi.herokuapp.com/site" tar
 
 1. Sagar Thacker ([LinkedIn](https://www.linkedin.com/in/sagar-thacker/) | [GitHub](https://www.github.com/sagar118))
 2. Shuchita Mishar ([LinkedIn](https://www.linkedin.com/in/shuchitamishra/) | [GitHub](https://github.com/shuchita28))
+
+https://github.com/sagar118/H2O-Hackathon-AQI-Prediction/assets/24275587/07e414f6-f2dd-4791-b6a6-87a934bd5049
+
